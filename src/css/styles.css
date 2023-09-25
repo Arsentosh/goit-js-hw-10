@@ -9,10 +9,19 @@ img {
 }
 
 .heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   text-align: center;
   color: rgb(255, 255, 255);
   padding: 12px;
-  background-color: #00b5cd;
+  background: rgb(0, 220, 255);
+  background: radial-gradient(
+    circle,
+    rgba(43, 72, 212, 1) 0%,
+    rgba(0, 220, 255, 0.5) 100%
+  );
+  margin-bottom: 12px;
 }
 
 .cat-info {
@@ -27,11 +36,51 @@ body {
   font-size: x-large;
 }
 
+/* Apply custom styles to the select element */
 .breed-select {
   display: flex;
-  text-align: center;
   margin: 0 auto;
   width: 360px;
+  padding: 8px; /* Add some padding for spacing */
+  border: 2px solid #00b5cd; /* Add a border */
+  border-radius: 5px; /* Add rounded corners */
+  background-color: #fff; /* Set background color */
+  color: #333; /* Set text color */
+  font-size: 16px; /* Adjust font size */
+  cursor: pointer; /* Show pointer cursor on hover */
+}
+
+/* Style the select when hovered */
+.breed-select:hover {
+  border-color: #007ea7; /* Change border color on hover */
+}
+
+/* Style the select when it's focused (clicked) */
+.breed-select:focus {
+  outline: none; /* Remove the default focus outline */
+  border-color: #00b5cd; /* Change border color on focus */
+  box-shadow: 0 0 5px rgba(0, 149, 205, 0.5); /* Add a subtle box shadow */
+}
+
+/* Style the select's dropdown arrow */
+.breed-select::after {
+  content: '\25BC'; /* Unicode down arrow character */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+/* Style the select options */
+.breed-select option {
+  background-color: #fff; /* Set background color for options */
+  color: #333; /* Set text color for options */
+}
+
+/* Style the select when it's disabled */
+.breed-select:disabled {
+  opacity: 0.7; /* Reduce opacity for disabled state */
+  cursor: not-allowed; /* Show not-allowed cursor */
 }
 
 .description {
