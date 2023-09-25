@@ -32,6 +32,7 @@ fetchBreeds()
 function onChange(event) {
   let id = event.target.value;
   loader.classList.remove('is-hidden');
+  errorLoad.classList.add('is-hidden');
 
   fetchCatByBreed(id)
     .then(function (data) {
@@ -50,5 +51,13 @@ function onChange(event) {
       container.innerHTML = '';
       Report.failure('Error!', 'Try reloading the page!');
     })
-    .finally(() => loader.classList.add('is-hidden'));
+    .finally(() => {
+      loader.classList.add('is-hidden');
+    });
 }
+
+// if (loader.classList !== 'is-hidden') {
+//   select.classList.remove('is-hidden');
+// } else {
+//   select.classList.add('is-hidden');
+// }
